@@ -16,6 +16,7 @@ Docker image for [Litmus test suite](http://www.webdav.org/neon/litmus/).
 
 
 ### Run Litmus Suite
+
 ```
 docker pull mar10/docker-litmus
 docker run --rm -ti mar10/docker-litmus https://<HOST_IP>:8080/ tester secret
@@ -24,7 +25,8 @@ docker run --rm -ti mar10/docker-litmus https://<HOST_IP>:8080/ tester secret
 
 ## Build and Debug
 
-`--network` option is required to enable accessing the client from withon the container:
+`--network` option is required to enable accessing the client from within the
+container:
 
 ```
 docker build --rm --network host -f Dockerfile -t docker-litmus:latest .
@@ -34,10 +36,10 @@ Shell
 ```
 docker run -ti --entrypoint bash mar10/docker-litmus
 ...
-bash-4.4# litmus https:0.0.0.0:8080
+bash-4.4# litmus https:<HOST_IP>:8080
 -> running `basic':
- 0. init.................. FAILED - segmentation fault
-Segmentation fault
+ 0. init.................. PASSED
+...
 See debug.log for network/debug traces.
 ...
 bash-4.4# less debug.log
