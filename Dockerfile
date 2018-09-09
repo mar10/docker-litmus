@@ -1,6 +1,6 @@
-# Inspired by 
-#   https://github.com/owncloud-docker/litmus
-
+# Home:
+#   https://hub.docker.com/r/mar10/docker-litmus/
+#
 FROM alpine:edge
 
 # ENTRYPOINT ["/usr/local/bin/litmus-wrapper"]
